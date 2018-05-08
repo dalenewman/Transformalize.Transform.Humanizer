@@ -36,7 +36,7 @@ namespace Transformalize.Transforms.Humanizer {
 
             var type = Received() ?? _input.Type;
 
-            if (type != "string" && !type.StartsWith("date", StringComparison.OrdinalIgnoreCase)) {
+            if (type != "string" && !type.StartsWith("date", StringComparison.OrdinalIgnoreCase) && type != "bytesize") {
                 Error($"The {Context.Operation.Method} expects a string or date, but received a {type} in field {Context.Field.Alias}.");
                 Run = false;
                 return;
@@ -46,27 +46,27 @@ namespace Transformalize.Transforms.Humanizer {
 
             switch (type) {
                 case "bytesize":
-                _transform = (row) => {
-                    var input = (ByteSize)row[_input];
-                    return Context.Operation.Format == Constants.DefaultSetting ? input.Humanize() : input.Humanize(context.Operation.Format);
-                };
-                break;
+                    _transform = (row) => {
+                        var input = (ByteSize)row[_input];
+                        return Context.Operation.Format == Constants.DefaultSetting ? input.Humanize() : input.Humanize(context.Operation.Format);
+                    };
+                    break;
                 case "date":
                 case "datetime":
-                _transform = (row) => {
-                    var input = (DateTime)row[_input];
-                    return input.Humanize(false);
-                };
-                break;
+                    _transform = (row) => {
+                        var input = (DateTime)row[_input];
+                        return input.Humanize(false);
+                    };
+                    break;
                 case "string":
-                _transform = (row) => {
-                    var input = (string)row[_input];
-                    return input.Humanize();
-                };
-                break;
+                    _transform = (row) => {
+                        var input = (string)row[_input];
+                        return input.Humanize();
+                    };
+                    break;
                 default:
-                _transform = (row) => row[_input];
-                break;
+                    _transform = (row) => row[_input];
+                    break;
 
             }
         }

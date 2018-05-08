@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Autofac;
 using Cfg.Net.Shorthand;
+using Transformalize.Configuration;
 using Transformalize.Contracts;
+using Transformalize.Transforms.Humanizer.Actions;
 using Parameter = Cfg.Net.Shorthand.Parameter;
 
 namespace Transformalize.Transforms.Humanizer.Autofac {
@@ -11,6 +14,7 @@ namespace Transformalize.Transforms.Humanizer.Autofac {
         private HashSet<string> _methods;
         private ShorthandRoot _shortHand;
         protected override void Load(ContainerBuilder builder) {
+
             // get methods and shorthand from builder
             _methods = builder.Properties.ContainsKey("Methods") ? (HashSet<string>)builder.Properties["Methods"] : new HashSet<string>();
             _shortHand = builder.Properties.ContainsKey("ShortHand") ? (ShorthandRoot)builder.Properties["ShortHand"] : new ShorthandRoot();
@@ -34,6 +38,13 @@ namespace Transformalize.Transforms.Humanizer.Autofac {
             RegisterTransform(builder, c => new UnderscoreTransform(c), new UnderscoreTransform().GetSignatures());
             RegisterTransform(builder, c => new BytesTransform(c), new BytesTransform().GetSignatures());
             RegisterTransform(builder, c => new ByteSizeTransform(c), new ByteSizeTransform().GetSignatures());
+
+            if (builder.Properties.ContainsKey("Process")) {
+                var process = (Process)builder.Properties["Process"];
+                foreach (var action in process.Actions.Where(a => a.Type == "humanize-labels")) {
+                    builder.Register<IAction>((c, p) => new HumanizeLabels(c.Resolve<IContext>(), action)).Named<IAction>(action.Key);
+                }
+            }
 
         }
 
