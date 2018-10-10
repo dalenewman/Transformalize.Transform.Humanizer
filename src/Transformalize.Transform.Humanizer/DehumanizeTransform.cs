@@ -15,9 +15,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 #endregion
+using Humanizer;
 using System;
 using System.Collections.Generic;
-using Humanizer;
 using Transformalize.Contracts;
 
 namespace Transformalize.Transforms.Humanizer {
@@ -36,14 +36,14 @@ namespace Transformalize.Transforms.Humanizer {
             var input = SingleInput();
             switch (input.Type) {
                 case "string":
-                _transform = row => {
-                    var value = (string)row[input];
-                    return value.Dehumanize();
-                };
-                break;
+                    _transform = row => {
+                        var value = (string)row[input];
+                        return value.Dehumanize();
+                    };
+                    break;
                 default:
-                _transform = row => row[input];
-                break;
+                    _transform = row => row[input];
+                    break;
             }
         }
 
