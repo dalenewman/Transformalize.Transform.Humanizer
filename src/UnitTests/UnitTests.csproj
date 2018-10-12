@@ -73,8 +73,8 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Transformalize, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.0.3.5-beta\lib\net452\Transformalize.dll</HintPath>
+    <Reference Include="Transformalize, Version=0.3.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.0.3.8-beta\lib\net462\Transformalize.dll</HintPath>
     </Reference>
     <Reference Include="Transformalize.Container.Autofac, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Transformalize.Container.Autofac.0.3.7-beta\lib\net452\Transformalize.Container.Autofac.dll</HintPath>
@@ -91,13 +91,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Transformalize.Transform.Humanizer.Autofac\Transformalize.Transform.Humanizer.Autofac.csproj">
       <Project>{cd3477b9-14e5-4ea3-90b0-ca9299bcae73}</Project>
       <Name>Transformalize.Transform.Humanizer.Autofac</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

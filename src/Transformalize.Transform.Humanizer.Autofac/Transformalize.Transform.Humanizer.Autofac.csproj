@@ -41,10 +41,18 @@
     <Reference Include="CfgNet, Version=0.10.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Cfg-NET.0.10.4\lib\net462\CfgNet.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="Transformalize, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.0.3.5-beta\lib\net452\Transformalize.dll</HintPath>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Transformalize, Version=0.3.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.0.3.8-beta\lib\net462\Transformalize.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -52,18 +60,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Transformalize.Transform.Humanizer\Transformalize.Transform.Humanizer.csproj">
       <Project>{4ed1e259-756a-40b8-9800-f563b59e0206}</Project>
       <Name>Transformalize.Transform.Humanizer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>set f="$(SolutionDir)..\Transformalize\Pipeline.Command\bin\$(ConfigurationName)\plugins"
+    <PostBuildEvent>set f="$(SolutionDir)..\Transformalize\Pipeline.Command\plugins"
 
-if exist %25f%25 copy /Y "$(TargetDir)*.*" "%25f%25"</PostBuildEvent>
+if exist %25f%25 copy /Y "$(TargetDir)Humanizer.dll" "%25f%25"
+if exist %25f%25 copy /Y "$(TargetDir)netstandard.dll" "%25f%25"
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Humanizer.dll" "%25f%25"
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Humanizer.Autofac.dll" "%25f%25"</PostBuildEvent>
   </PropertyGroup>
 </Project>
