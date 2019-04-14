@@ -76,6 +76,8 @@
 if exist %25f%25 copy /Y "$(TargetDir)Humanizer.dll" "%25f%25"
 if exist %25f%25 copy /Y "$(TargetDir)netstandard.dll" "%25f%25"
 if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Humanizer.dll" "%25f%25"
-if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Humanizer.Autofac.dll" "%25f%25"</PostBuildEvent>
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Humanizer.pdb" "%25f%25"
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Humanizer.Autofac.dll" "%25f%25"
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Humanizer.Autofac.pdb" "%25f%25"</PostBuildEvent>
   </PropertyGroup>
 </Project>
