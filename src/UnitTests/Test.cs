@@ -99,7 +99,7 @@ namespace UnitTests {
                Assert.AreEqual("2 months from now", rows[1][humanizedDate]);
                Assert.AreEqual("30 minutes from now", rows[2][humanizedDate]);
 
-               Assert.AreEqual("sample text", rows[0][camelized]);
+               Assert.AreEqual("sampleText", rows[0][camelized]);
                Assert.AreEqual("sampleTexts", rows[1][camelized]);
                Assert.AreEqual("$ample-text", rows[2][camelized]);
 
@@ -119,7 +119,7 @@ namespace UnitTests {
                Assert.AreEqual("22nd", rows[1][ordinalized]);
                Assert.AreEqual("3000th", rows[2][ordinalized]);
 
-               Assert.AreEqual("Sample text", rows[0][pascalized]);
+               Assert.AreEqual("SampleText", rows[0][pascalized]);
                Assert.AreEqual("SampleTexts", rows[1][pascalized]);
                Assert.AreEqual("$ample-text", rows[2][pascalized]);
 
