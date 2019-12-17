@@ -22,47 +22,50 @@ using Transformalize.Configuration;
 using Transformalize.Contracts;
 
 namespace Transformalize.Transforms.Humanizer {
-    public class BytesTransform : BaseTransform {
-        private readonly Field _input;
+   public class BytesTransform : BaseTransform {
+      private readonly Field _input;
 
-        public BytesTransform(IContext context = null) : base(context, "bytesize") {
-            if (IsMissingContext()) {
-                return;
-            }
+      public BytesTransform(IContext context = null) : base(context, "bytesize") {
+         if (IsMissingContext()) {
+            return;
+         }
 
-            _input = SingleInput();
-        }
+         _input = SingleInput();
+      }
 
-        public override IRow Operate(IRow row) {
-            switch (_input.Type) {
-                case "byte":
-                    row[Context.Field] = ((byte)row[_input]).Bytes();
-                    break;
-                case "short":
-                case "int16":
-                    row[Context.Field] = ((short)row[_input]).Bytes();
-                    break;
-                case "int":
-                case "int32":
-                    row[Context.Field] = ((int)row[_input]).Bytes();
-                    break;
-                case "double":
-                    row[Context.Field] = ((double)row[_input]).Bytes();
-                    break;
-                case "long":
-                case "int64":
-                    row[Context.Field] = ((long)row[_input]).Bytes();
-                    break;
-                default:
-                    row[Context.Field] = Convert.ToDouble(row[_input]).Bytes();
-                    break;
-            }
+      public override IRow Operate(IRow row) {
+         switch (_input.Type) {
+            case "byte":
+               row[Context.Field] = ((byte)row[_input]).Bytes();
+               break;
+            case "short":
+            case "int16":
+               row[Context.Field] = ((short)row[_input]).Bytes();
+               break;
+            case "int":
+            case "int32":
+               row[Context.Field] = ((int)row[_input]).Bytes();
+               break;
+            case "double":
+               row[Context.Field] = ((double)row[_input]).Bytes();
+               break;
+            case "long":
+            case "int64":
+               row[Context.Field] = ((long)row[_input]).Bytes();
+               break;
+            case "byte[]":
+               row[Context.Field] = ((byte[])row[_input]).Length.Bytes();
+               break;
+            default:
+               row[Context.Field] = Convert.ToDouble(row[_input]).Bytes();
+               break;
+         }
 
-            return row;
-        }
+         return row;
+      }
 
-        public override IEnumerable<OperationSignature> GetSignatures() {
-            return new[] { new OperationSignature("bytes") };
-        }
-    }
+      public override IEnumerable<OperationSignature> GetSignatures() {
+         return new[] { new OperationSignature("bytes") };
+      }
+   }
 }
