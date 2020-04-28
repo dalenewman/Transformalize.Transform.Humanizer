@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>abd91eb0-ec13-4048-99ff-91539ed6ab56</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Transformalize.Transform.Humanizer.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Actions\HumanizeLabels.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ByteSizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BytesTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CamelizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DehumanizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromMetricTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromRomanTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HumanizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HyphenateTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OrdinalizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PascalizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluralizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SingularizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TitleizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToMetricTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToOrdinalWordsTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToRomanTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToWordsTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnderscoreTransform.cs" />
+  </ItemGroup>
+</Project>
