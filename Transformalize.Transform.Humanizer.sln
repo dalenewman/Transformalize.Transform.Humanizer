@@ -8,9 +8,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Transform.Humanizer.Autofac", "src\Transformalize.Transform.Humanizer.Autofac\Transformalize.Transform.Humanizer.Autofac.csproj", "{CD3477B9-14E5-4EA3-90B0-CA9299BCAE73}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4563C88-9C80-4BD0-949E-AA64F111957E}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{50AABD88-AF9F-4677-814C-E376AB8CED1E}"
 	ProjectSection(SolutionItems) = preProject
+		nuget\myget.bat = nuget\myget.bat
 		nuget\nuget.bat = nuget\nuget.bat
 		nuget\Transformalize.Transform.Humanizer.Autofac.nuspec = nuget\Transformalize.Transform.Humanizer.Autofac.nuspec
 		nuget\Transformalize.Transform.Humanizer.nuspec = nuget\Transformalize.Transform.Humanizer.nuspec
@@ -22,11 +26,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transform.Autofac", "Transf
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Transform.Humanizer.Shared", "src\Transformalize.Transform.Humanizer.Shared\Transformalize.Transform.Humanizer.Shared.shproj", "{ABD91EB0-EC13-4048-99FF-91539ED6AB56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Transform.Humanizer.Standard.20", "src\Transformalize.Transform.Humanizer.Standard.20\Transformalize.Transform.Humanizer.Standard.20.csproj", "{ED5990CF-67C1-4C03-9958-956D86DA63E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Humanizer.Standard.20", "src\Transformalize.Transform.Humanizer.Standard.20\Transformalize.Transform.Humanizer.Standard.20.csproj", "{ED5990CF-67C1-4C03-9958-956D86DA63E9}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Transform.Humanizer.Autofac.Shared", "src\Transformalize.Transform.Humanizer.Autofac.Shared\Transformalize.Transform.Humanizer.Autofac.Shared.shproj", "{C49A80C9-CB7C-47E8-A032-FCDF7EFBE2E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Transform.Humanizer.Autofac.Standard.20", "src\Transformalize.Transform.Humanizer.Autofac.Standard.20\Transformalize.Transform.Humanizer.Autofac.Standard.20.csproj", "{63E7B43B-38E7-496C-844A-EB6C3EEAE6B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Humanizer.Autofac.Standard.20", "src\Transformalize.Transform.Humanizer.Autofac.Standard.20\Transformalize.Transform.Humanizer.Autofac.Standard.20.csproj", "{63E7B43B-38E7-496C-844A-EB6C3EEAE6B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{AD98F8D4-6660-4DFA-92A9-6A6B50291D6E}"
 EndProject
@@ -34,7 +38,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Test.Unit.Shared", "test\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Unit", "src\Test.Unit\Test.Unit.csproj", "{20D52FB0-41BE-44FC-9C28-7A02D0D0494D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Unit.Core", "test\Test.Unit.Core\Test.Unit.Core.csproj", "{0F328281-C3C5-444B-80E6-28A5BD79ED30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Unit.Core", "test\Test.Unit.Core\Test.Unit.Core.csproj", "{0F328281-C3C5-444B-80E6-28A5BD79ED30}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

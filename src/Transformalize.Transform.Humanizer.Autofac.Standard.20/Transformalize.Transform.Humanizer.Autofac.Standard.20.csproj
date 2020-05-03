@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Transformalize.Transforms.Humanizer.Autofac</RootNamespace>
     <AssemblyName>Transformalize.Transform.Humanizer.Autofac</AssemblyName>
-    <Version>0.6.29-beta</Version>
+    <Version>0.6.30-beta</Version>
   </PropertyGroup>
 
   <Import Project="..\Transformalize.Transform.Humanizer.Autofac.Shared\Transformalize.Transform.Humanizer.Autofac.Shared.projitems" Label="Shared" />
