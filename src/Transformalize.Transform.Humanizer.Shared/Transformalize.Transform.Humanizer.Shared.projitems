@@ -11,6 +11,11 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Actions\HumanizeLabels.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ByteSizeTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BitsTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TerabytesTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GigabytesTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MegabytesTransform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KilobytesTransform.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BytesTransform.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CamelizeTransform.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DehumanizeTransform.cs" />

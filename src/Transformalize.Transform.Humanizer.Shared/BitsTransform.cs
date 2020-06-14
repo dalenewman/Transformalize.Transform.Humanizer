@@ -23,12 +23,12 @@ using Transformalize.Configuration;
 using Transformalize.Contracts;
 
 namespace Transformalize.Transforms.Humanizer {
-   public class BytesTransform : BaseTransform {
+   public class BitsTransform : BaseTransform {
 
       private readonly Field _input;
       private readonly Func<object, ByteSize> _transform;
 
-      public BytesTransform(IContext context = null) : base(context, "bytesize") {
+      public BitsTransform(IContext context = null) : base(context, "bytesize") {
 
          if (IsMissingContext()) {
             return;
@@ -42,28 +42,28 @@ namespace Transformalize.Transforms.Humanizer {
 
          switch (_input.Type) {
             case "byte":
-               _transform = (o) => ((byte)o).Bytes();
+               _transform = (o) => ((byte)o).Bits();
                break;
             case "short":
             case "int16":
-               _transform = (o) => ((short)o).Bytes();
+               _transform = (o) => ((short)o).Bits();
                break;
             case "int":
             case "int32":
-               _transform = (o) => ((int)o).Bytes();
+               _transform = (o) => ((int)o).Bits();
                break;
             case "double":
-               _transform = (o) => ((double)o).Bytes();
+               _transform = (o) => Convert.ToInt64(o).Bits();
                break;
             case "long":
             case "int64":
-               _transform = (o) => ((long)o).Bytes();
+               _transform = (o) => ((long)o).Bits();
                break;
             case "byte[]":
-               _transform = (o) => ((byte[])o).Length.Bytes();
+               _transform = (o) => ((byte[])o).Length.Bits();
                break;
             default:
-               _transform = (o) => Convert.ToDouble(o).Bytes();
+               _transform = (o) => Convert.ToInt64(o).Bits();
                break;
          }
 
@@ -75,7 +75,7 @@ namespace Transformalize.Transforms.Humanizer {
       }
 
       public override IEnumerable<OperationSignature> GetSignatures() {
-         return new[] { new OperationSignature("bytes") };
+         return new[] { new OperationSignature("bits") };
       }
 
 

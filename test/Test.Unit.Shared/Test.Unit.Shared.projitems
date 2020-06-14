@@ -9,6 +9,7 @@
     <Import_RootNamespace>Test.Unit.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)TestByteSizeTransform.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Test.cs" />
   </ItemGroup>
 </Project>

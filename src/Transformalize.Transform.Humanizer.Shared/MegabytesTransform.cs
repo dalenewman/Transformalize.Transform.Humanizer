@@ -23,12 +23,12 @@ using Transformalize.Configuration;
 using Transformalize.Contracts;
 
 namespace Transformalize.Transforms.Humanizer {
-   public class BytesTransform : BaseTransform {
+   public class MegabytesTransform : BaseTransform {
 
       private readonly Field _input;
       private readonly Func<object, ByteSize> _transform;
 
-      public BytesTransform(IContext context = null) : base(context, "bytesize") {
+      public MegabytesTransform(IContext context = null) : base(context, "bytesize") {
 
          if (IsMissingContext()) {
             return;
@@ -42,28 +42,28 @@ namespace Transformalize.Transforms.Humanizer {
 
          switch (_input.Type) {
             case "byte":
-               _transform = (o) => ((byte)o).Bytes();
+               _transform = (o) => ((byte)o).Megabytes();
                break;
             case "short":
             case "int16":
-               _transform = (o) => ((short)o).Bytes();
+               _transform = (o) => ((short)o).Megabytes();
                break;
             case "int":
             case "int32":
-               _transform = (o) => ((int)o).Bytes();
+               _transform = (o) => ((int)o).Megabytes();
                break;
             case "double":
-               _transform = (o) => ((double)o).Bytes();
+               _transform = (o) => ((double)o).Megabytes();
                break;
             case "long":
             case "int64":
-               _transform = (o) => ((long)o).Bytes();
+               _transform = (o) => ((long)o).Megabytes();
                break;
             case "byte[]":
-               _transform = (o) => ((byte[])o).Length.Bytes();
+               _transform = (o) => ((byte[])o).Length.Megabytes();
                break;
             default:
-               _transform = (o) => Convert.ToDouble(o).Bytes();
+               _transform = (o) => Convert.ToDouble(o).Megabytes();
                break;
          }
 
@@ -75,7 +75,7 @@ namespace Transformalize.Transforms.Humanizer {
       }
 
       public override IEnumerable<OperationSignature> GetSignatures() {
-         return new[] { new OperationSignature("bytes") };
+         return new[] { new OperationSignature("megabytes") };
       }
 
 
