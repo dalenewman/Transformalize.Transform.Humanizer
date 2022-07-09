@@ -93,7 +93,7 @@ namespace UnitTests {
 
                Assert.AreEqual("SampleText", rows[0][dehumanized]);
                Assert.AreEqual("SampleTexts", rows[1][dehumanized]);
-               Assert.AreEqual("$AmpleText", rows[2][dehumanized]);
+               Assert.AreEqual("$ampleText", rows[2][dehumanized]);
 
                Assert.AreEqual("2 months from now", rows[0][humanizedDate]);
                Assert.AreEqual("2 months from now", rows[1][humanizedDate]);
