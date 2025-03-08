@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Transformalize.Transforms.Humanizer.Autofac</RootNamespace>
     <AssemblyName>Transformalize.Transform.Humanizer.Autofac</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -70,12 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Transformalize.Transform.Humanizer\Transformalize.Transform.Humanizer.csproj">
-      <Project>{4ed1e259-756a-40b8-9800-f563b59e0206}</Project>
-      <Name>Transformalize.Transform.Humanizer</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
